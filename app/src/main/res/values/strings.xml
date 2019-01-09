@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Flag Quiz</string>
+    <string name="short_quiz">Short Quiz</string>
+    <string name="all_countries">All Countries</string>
+</resources>
