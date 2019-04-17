@@ -5,28 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import static java.lang.System.exit;
+
 public class MainActivity extends AppCompatActivity {
-    public static final String QUESTIONS = "com.gamehut.flagquiz.extra.QUESTIONS";
-    public static final String POSITION = "com.gamehut.flagquiz.extra.POSITION";
-    public static final String SCORE = "com.gamehut.flagquiz.extra.SCORE";
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void shortQuiz(View view) {
+        // Start quiz
         Intent intent = new Intent(this, QuizActivity.class);
-        intent.putExtra(SCORE, 0);
-        intent.putExtra(POSITION, 0);
-        intent.putExtra(QUESTIONS, 25);
+        startActivity(intent);
     }
 
     public void allCountries(View view) {
-        Intent intent = new Intent(this, QuizActivity.class);
-        intent.putExtra(SCORE, 0);
-        intent.putExtra(POSITION, 0);
-        intent.putExtra(QUESTIONS, 196);
+        finish();
+        exit(0);
     }
 }
